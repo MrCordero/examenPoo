@@ -3,7 +3,7 @@ package org.app.model;
 public class Pelicula {
     private int id;
     private String duracion;
-    private String dioma;
+    private String idioma;
     private String fkdirector;
     private String resumen;   
 
@@ -24,11 +24,11 @@ public class Pelicula {
     }
 
     public String getDioma() {
-        return dioma;
+        return idioma;
     }
 
     public void setDioma(String dioma) {
-        this.dioma = dioma;
+        this.idioma = dioma;
     }
 
     public String getFkdirector() {
