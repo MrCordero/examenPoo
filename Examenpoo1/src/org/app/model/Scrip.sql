@@ -42,5 +42,31 @@ CREATE TABLE asiento(
     PRIMARY KEY(fila)
 );
 
+CREATE TABLE sala(
+    id INT AUTO_INCREMENT,
+    tipo_de_sala VARCHAR (5),
+    asiento_fk_id INT,
+    
+    PRIMARY KEY (id),
+    FOREIGN KEY (asiento_fk_id) REFERENCES asiento(id)
+);
 
+CREATE TABLE proyeccion(
+    id INT AUTO_INCREMENT,
+    pelicula_fk_id INT,
+    horario VARCHAR(7),
+    fecha VARCHAR(15),
+    sala_fk_id INT,
+    localidad VARCHAR(66),
+    precio int,
+    
+    PRIMARY KEY(id),
+    FOREIGN KEY (pelicula_fk_id) REFERENCES pelicula(id)
+);
 
+CREATE TABLE venta(
+    id INT AUTO_INCREMENT,
+    tipo_venta VARCHAR(50),
+
+    PRIMARY KEY(id)
+);
