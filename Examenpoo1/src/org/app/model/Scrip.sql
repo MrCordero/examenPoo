@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS bdcinema;
 CREATE DATABASE bdcinema;
 USE bdcinema;
 
@@ -72,13 +73,25 @@ CREATE TABLE proyeccion(
     FOREIGN KEY (pelicula_fk_id) REFERENCES pelicula(id)
 );
 
-CREATE TABLE venta(
+CREATE TABLE tipo_venta(
     id INT AUTO_INCREMENT,
     tipo_venta VARCHAR(50),
 
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    UNIQUE (tipo_venta)
 );
 
-INSERT INTO venta VALUES(NULL,'venta internet.');
-INSERT INTO venta VALUES(NULL,'venta telefónica');
-INSERT INTO venta VALUES(NULL,'venta presencial.');
+INSERT INTO tipo_venta VALUES(NULL,'venta internet');
+INSERT INTO tipo_venta VALUES(NULL,'venta telefónica');
+INSERT INTO tipo_venta VALUES(NULL,'venta presencial');
+
+CREATE TABLE venta(
+    id INT AUTO_INCREMENT,
+    cliente_id_fk INT,
+    tipo_venta_id_fk INT,
+    cantidad INT,
+
+    PRIMARY KEY(id),
+    FOREIGN KEY(cliente_id_fk) REFERENCES cliente(id),
+    FOREIGN KEY(tipo_venta_id_fk) REFERENCES tipo_venta(id)
+);
