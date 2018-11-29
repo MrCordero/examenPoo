@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.app.model.Proyeccion;
-import org.app.model.dao.DAO_Proyeccion;
+import org.app.model.dao.DAO_ProyeccionSalaPelicula;
 
 public class App extends javax.swing.JFrame {
 
@@ -99,13 +99,4 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblProyeccion;
     // End of variables declaration//GEN-END:variables
-    private void cargarTablaProyeccion(){
-        try (Proyeccion p : new DAO_Proyeccion().read()){
-          
-        }
-          
-}       catch (ClassNotFoundException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-        }
+}
