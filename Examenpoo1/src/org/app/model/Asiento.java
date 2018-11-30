@@ -8,6 +8,8 @@ public class Asiento {
         return "Asiento{" + "fila=" + fila + ", numero=" + numero + ", estado=" + estado + '}';
     }
 
+  
+
     @Override
     public int hashCode() {
         int hash = 3;

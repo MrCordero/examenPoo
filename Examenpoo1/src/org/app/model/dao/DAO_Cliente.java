@@ -13,7 +13,7 @@ public class DAO_Cliente extends Conexion implements DAO<Cliente>{
 
     @Override
     public void create(Cliente ob) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     @Override

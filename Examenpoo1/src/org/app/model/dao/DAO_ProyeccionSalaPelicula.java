@@ -18,7 +18,7 @@ public class DAO_ProyeccionSalaPelicula extends Conexion implements DAO<Proyecci
     public void create(ProyeccionSalaPelicula ob) throws SQLException {
         ejecutar(String.format("INSERT INTO proyeccion VALUES(NULL,"
                 + "'%d',"
-                + "'#s',"
+                + "'%s',"
                 + "'%s',"
                 + "'%s',"
                 + "'%d',"
