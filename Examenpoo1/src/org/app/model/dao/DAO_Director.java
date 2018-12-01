@@ -5,7 +5,7 @@ import java.util.List;
 import org.app.model.Conexion;
 import org.app.model.Director;
 
-public class DAO_Director extends Conexion implements DAO<Director>{
+public class DAO_Director extends Conexion implements DAO<Director> {
 
     public DAO_Director() throws ClassNotFoundException, SQLException {
         super("bdcinema");
@@ -13,12 +13,16 @@ public class DAO_Director extends Conexion implements DAO<Director>{
 
     @Override
     public void create(Director ob) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ejecutar("INSERT INTO director VALUES(NULL,"
+                + "'" + ob.getNombre() + "',"
+                + "'" + ob.getRut() + "',"
+                + "'" + ob.getNacionalidad() + "');");
     }
 
     @Override
     public List<Director> read() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
+       
     }
 
     @Override
@@ -30,5 +34,5 @@ public class DAO_Director extends Conexion implements DAO<Director>{
     public void delete(Director ob) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
