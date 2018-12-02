@@ -1,4 +1,4 @@
-package org.app.model;
+package pelicula;
 
 public class ProyeccionSalaPelicula extends Proyeccion{
     private String peliculaNombre;

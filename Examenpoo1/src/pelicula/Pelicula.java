@@ -1,4 +1,4 @@
-package org.app.model;
+package pelicula;
 
 import java.util.Objects;
 

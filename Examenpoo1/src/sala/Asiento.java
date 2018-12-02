@@ -1,4 +1,4 @@
-package org.app.model;
+package sala;
 
 public class Asiento {
     private int fila;

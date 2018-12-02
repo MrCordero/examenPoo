@@ -1,11 +1,11 @@
-package org.app.model.dao;
+package model.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import org.app.model.Conexion;
-import org.app.model.ProyeccionSalaPelicula;
+import model.Conexion;
+import pelicula.ProyeccionSalaPelicula;
 
 public class DAO_ProyeccionSalaPelicula extends Conexion implements DAO<ProyeccionSalaPelicula> {
 

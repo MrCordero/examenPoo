@@ -1,11 +1,11 @@
-package org.app.model.dao;
+package model.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import org.app.model.Cliente;
-import org.app.model.Conexion;
+import Cliente_Director.Cliente;
+import model.Conexion;
 
 public class DAO_Cliente extends Conexion implements DAO<Cliente> {
 

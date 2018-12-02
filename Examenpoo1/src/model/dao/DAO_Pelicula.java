@@ -1,9 +1,11 @@
-package org.app.model.dao;
+package model.dao;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-import org.app.model.Conexion;
-import org.app.model.Pelicula;
+import model.Conexion;
+import pelicula.Pelicula;
 
 public class DAO_Pelicula extends Conexion implements DAO<Pelicula> {
 
@@ -22,7 +24,23 @@ public class DAO_Pelicula extends Conexion implements DAO<Pelicula> {
 
     @Override
     public List<Pelicula> read() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Pelicula> pelicula = new ArrayList<>();
+        ResultSet rs = ejecutar("SELECT * FROM pelicula;");
+        
+        Pelicula pl;
+        
+        while(rs.next()){
+            pl = new Pelicula();
+            
+            pl.setId(1);
+            pl.setDioma(rs.getString(2));
+            pl.setDuracion(rs.getString(3));
+            pl.setFkdirector(rs.getString(4));
+            pl.setResumen(rs.getString(5));
+            
+            pelicula.add(pl);
+        }
+        return pelicula;
     }
 
     @Override

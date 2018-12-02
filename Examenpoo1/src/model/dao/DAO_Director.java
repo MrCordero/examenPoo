@@ -1,9 +1,11 @@
-package org.app.model.dao;
+package model.dao;
 
 import java.sql.SQLException;
 import java.util.List;
-import org.app.model.Conexion;
-import org.app.model.Director;
+import model.Conexion;
+import Cliente_Director.Director;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class DAO_Director extends Conexion implements DAO<Director> {
 
@@ -21,8 +23,22 @@ public class DAO_Director extends Conexion implements DAO<Director> {
 
     @Override
     public List<Director> read() throws SQLException {
-        return null;
-       
+      List<Director> director = new ArrayList<>();
+      ResultSet rs = ejecutar("SELECT * FROM director;");
+      
+      Director dr;
+      
+      while(rs.next()){
+          dr = new Director();
+          
+          dr.setId(1);
+          dr.setRut(rs.getString(2));
+          dr.setNombre(rs.getString(3));
+          dr.setNacionalidad(rs.getString(4));
+          
+          director.add(dr);
+      }
+      return director;
     }
 
     @Override

@@ -1,10 +1,10 @@
-package or.app.main;
+package main;
 
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.app.model.Proyeccion;
-import org.app.model.dao.DAO_ProyeccionSalaPelicula;
+import pelicula.Proyeccion;
+import model.dao.DAO_ProyeccionSalaPelicula;
 
 public class App extends javax.swing.JFrame {
 

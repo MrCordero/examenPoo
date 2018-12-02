@@ -1,15 +1,16 @@
-package org.app.model;
+package Cliente_Director;
 
 import java.util.Objects;
 
-public class Director {
+public class ClasePadre {
+
     private int id;
     private String nombre;
     private String rut;
 
     @Override
     public String toString() {
-        return "Director{" + "id=" + id + ", nombre=" + nombre + ", rut=" + rut + ", nacionalidad=" + nacionalidad + '}';
+        return "ClasePadre{" + "id=" + id + ", nombre=" + nombre + ", rut=" + rut + '}';
     }
 
     @Override
@@ -18,7 +19,6 @@ public class Director {
         hash = 97 * hash + this.id;
         hash = 97 * hash + Objects.hashCode(this.nombre);
         hash = 97 * hash + Objects.hashCode(this.rut);
-        hash = 97 * hash + Objects.hashCode(this.nacionalidad);
         return hash;
     }
 
@@ -33,7 +33,7 @@ public class Director {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Director other = (Director) obj;
+        final ClasePadre other = (ClasePadre) obj;
         if (this.id != other.id) {
             return false;
         }
@@ -43,12 +43,8 @@ public class Director {
         if (!Objects.equals(this.rut, other.rut)) {
             return false;
         }
-        if (!Objects.equals(this.nacionalidad, other.nacionalidad)) {
-            return false;
-        }
         return true;
     }
-    private String nacionalidad;
 
     public int getId() {
         return id;
@@ -74,11 +70,4 @@ public class Director {
         this.rut = rut;
     }
 
-    public String getNacionalidad() {
-        return nacionalidad;
-    }
-
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
-    }
 }

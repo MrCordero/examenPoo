@@ -1,4 +1,4 @@
-package org.app.model;
+package sala;
 
 import java.util.Objects;
 
