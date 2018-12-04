@@ -17,7 +17,7 @@ public class DAO_Pelicula extends Conexion implements DAO<Pelicula> {
     public void create(Pelicula ob) throws SQLException {
         ejecutar("INSERT INTO pelicula VALUES(NULL,"
                 + "'" + ob.getDuracion() + "',"
-                + "'" + ob.getDioma() + "',"
+                + "'" + ob.getIdioma() + "',"
                 + "'" + ob.getFkdirector() + "',"
                 + "'" + ob.getResumen() + "');");
     }
@@ -33,7 +33,7 @@ public class DAO_Pelicula extends Conexion implements DAO<Pelicula> {
             pl = new Pelicula();
             
             pl.setId(1);
-            pl.setDioma(rs.getString(2));
+            pl.setIdioma(rs.getString(2));
             pl.setDuracion(rs.getString(3));
             pl.setFkdirector(rs.getString(4));
             pl.setResumen(rs.getString(5));

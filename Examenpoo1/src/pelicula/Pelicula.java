@@ -71,11 +71,11 @@ public class Pelicula {
         this.duracion = duracion;
     }
 
-    public String getDioma() {
+    public String getIdioma() {
         return idioma;
     }
 
-    public void setDioma(String dioma) {
+    public void setIdioma(String dioma) {
         this.idioma = dioma;
     }
 
