@@ -16,6 +16,7 @@ public class DAO_Pelicula extends Conexion implements DAO<Pelicula> {
     @Override
     public void create(Pelicula ob) throws SQLException {
         ejecutar("INSERT INTO pelicula VALUES(NULL,"
+                + "'" + ob.getNombre() + "',"
                 + "'" + ob.getDuracion() + "',"
                 + "'" + ob.getIdioma() + "',"
                 + "'" + ob.getFkdirector() + "',"
@@ -26,18 +27,19 @@ public class DAO_Pelicula extends Conexion implements DAO<Pelicula> {
     public List<Pelicula> read() throws SQLException {
         List<Pelicula> pelicula = new ArrayList<>();
         ResultSet rs = ejecutar("SELECT * FROM pelicula;");
-        
+
         Pelicula pl;
-        
-        while(rs.next()){
+
+        while (rs.next()) {
             pl = new Pelicula();
-            
+
             pl.setId(1);
-            pl.setIdioma(rs.getString(2));
-            pl.setDuracion(rs.getString(3));
-            pl.setFkdirector(rs.getString(4));
-            pl.setResumen(rs.getString(5));
-            
+            pl.setNombre(rs.getString(2));
+            pl.setIdioma(rs.getString(3));
+            pl.setDuracion(rs.getString(4));
+            pl.setFkdirector(rs.getString(5));
+            pl.setResumen(rs.getString(6));
+
             pelicula.add(pl);
         }
         return pelicula;

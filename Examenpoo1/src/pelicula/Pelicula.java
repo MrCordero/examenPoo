@@ -4,23 +4,26 @@ import java.util.Objects;
 
 public class Pelicula {
     private int id;
+    private String nombre;
     private String duracion;
     private String idioma;
     private String fkdirector;
+    private String resumen;
 
     @Override
     public String toString() {
-        return "Pelicula{" + "id=" + id + ", duracion=" + duracion + ", idioma=" + idioma + ", fkdirector=" + fkdirector + ", resumen=" + resumen + '}';
+        return "Pelicula{" + "id=" + id + ", nombre=" + nombre + ", duracion=" + duracion + ", idioma=" + idioma + ", fkdirector=" + fkdirector + ", resumen=" + resumen + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 79 * hash + this.id;
-        hash = 79 * hash + Objects.hashCode(this.duracion);
-        hash = 79 * hash + Objects.hashCode(this.idioma);
-        hash = 79 * hash + Objects.hashCode(this.fkdirector);
-        hash = 79 * hash + Objects.hashCode(this.resumen);
+        int hash = 5;
+        hash = 97 * hash + this.id;
+        hash = 97 * hash + Objects.hashCode(this.nombre);
+        hash = 97 * hash + Objects.hashCode(this.duracion);
+        hash = 97 * hash + Objects.hashCode(this.idioma);
+        hash = 97 * hash + Objects.hashCode(this.fkdirector);
+        hash = 97 * hash + Objects.hashCode(this.resumen);
         return hash;
     }
 
@@ -39,6 +42,9 @@ public class Pelicula {
         if (this.id != other.id) {
             return false;
         }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
         if (!Objects.equals(this.duracion, other.duracion)) {
             return false;
         }
@@ -53,7 +59,7 @@ public class Pelicula {
         }
         return true;
     }
-    private String resumen;   
+    
 
     public int getId() {
         return id;
@@ -61,6 +67,14 @@ public class Pelicula {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDuracion() {
@@ -75,8 +89,8 @@ public class Pelicula {
         return idioma;
     }
 
-    public void setIdioma(String dioma) {
-        this.idioma = dioma;
+    public void setIdioma(String idioma) {
+        this.idioma = idioma;
     }
 
     public String getFkdirector() {
@@ -94,4 +108,7 @@ public class Pelicula {
     public void setResumen(String resumen) {
         this.resumen = resumen;
     }
+    
+
+
 }
