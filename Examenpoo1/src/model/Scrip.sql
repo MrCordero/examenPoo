@@ -31,6 +31,7 @@ INSERT INTO director VALUES(NULL,'444-4','directo2','Argentina');
 
 CREATE TABLE pelicula(
     id INT AUTO_INCREMENT,
+    nombre VARCHAR(50),
     duracion VARCHAR(6),
     idioma VARCHAR(22),
     director_fk_id INT,
