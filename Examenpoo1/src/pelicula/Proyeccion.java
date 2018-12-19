@@ -5,10 +5,10 @@ import java.util.Objects;
 public class Proyeccion {
 
     private int id;
-    private int fkpelicula;
+    private String fkpelicula;
     private String horario;
     private String fecha;
-    private int fksala;
+    private String fksala;
     private String localidad;
     private int precio;
 
@@ -19,14 +19,14 @@ public class Proyeccion {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + this.id;
-        hash = 79 * hash + this.fkpelicula;
-        hash = 79 * hash + Objects.hashCode(this.horario);
-        hash = 79 * hash + Objects.hashCode(this.fecha);
-        hash = 79 * hash + this.fksala;
-        hash = 79 * hash + Objects.hashCode(this.localidad);
-        hash = 79 * hash + this.precio;
+        int hash = 3;
+        hash = 53 * hash + this.id;
+        hash = 53 * hash + Objects.hashCode(this.fkpelicula);
+        hash = 53 * hash + Objects.hashCode(this.horario);
+        hash = 53 * hash + Objects.hashCode(this.fecha);
+        hash = 53 * hash + Objects.hashCode(this.fksala);
+        hash = 53 * hash + Objects.hashCode(this.localidad);
+        hash = 53 * hash + this.precio;
         return hash;
     }
 
@@ -45,19 +45,19 @@ public class Proyeccion {
         if (this.id != other.id) {
             return false;
         }
-        if (this.fkpelicula != other.fkpelicula) {
-            return false;
-        }
-        if (this.fksala != other.fksala) {
-            return false;
-        }
         if (this.precio != other.precio) {
+            return false;
+        }
+        if (!Objects.equals(this.fkpelicula, other.fkpelicula)) {
             return false;
         }
         if (!Objects.equals(this.horario, other.horario)) {
             return false;
         }
         if (!Objects.equals(this.fecha, other.fecha)) {
+            return false;
+        }
+        if (!Objects.equals(this.fksala, other.fksala)) {
             return false;
         }
         if (!Objects.equals(this.localidad, other.localidad)) {
@@ -74,11 +74,11 @@ public class Proyeccion {
         this.id = id;
     }
 
-    public int getFkpelicula() {
+    public String getFkpelicula() {
         return fkpelicula;
     }
 
-    public void setFkpelicula(int fkpelicula) {
+    public void setFkpelicula(String fkpelicula) {
         this.fkpelicula = fkpelicula;
     }
 
@@ -98,11 +98,11 @@ public class Proyeccion {
         this.fecha = fecha;
     }
 
-    public int getFksala() {
+    public String getFksala() {
         return fksala;
     }
 
-    public void setFksala(int fksala) {
+    public void setFksala(String fksala) {
         this.fksala = fksala;
     }
 
@@ -120,5 +120,9 @@ public class Proyeccion {
 
     public void setPrecio(int precio) {
         this.precio = precio;
+    }
+
+    public void setPrecio(String precio) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

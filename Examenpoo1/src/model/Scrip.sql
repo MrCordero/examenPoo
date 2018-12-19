@@ -34,15 +34,14 @@ CREATE TABLE pelicula(
     nombre VARCHAR(50),
     duracion VARCHAR(6),
     idioma VARCHAR(22),
-    director_fk_id INT,
+    director VARCHAR(50),
     resumen VARCHAR(100),
     
-    PRIMARY KEY(id),
-    FOREIGN KEY (director_fk_id) REFERENCES director(id)
+    PRIMARY KEY(id)
 );
 
-INSERT INTO pelicula VALUES(NULL,'1:20','Ingles',1,'resumen 1');
-INSERT INTO pelicula VALUES(NULL,'1:40','Latino',2,'resumen 2');
+INSERT INTO pelicula VALUES(NULL,'nombre1','1:20','Ingles','director1','resumen 1');
+INSERT INTO pelicula VALUES(NULL,'nombre2','1:40','Latino','director2','resumen 2');
 
 CREATE TABLE asiento(
     fila INT,
@@ -63,15 +62,14 @@ CREATE TABLE sala(
 
 CREATE TABLE proyeccion(
     id INT AUTO_INCREMENT,
-    pelicula_fk_id INT,
+    pelicula VARCHAR(50),
     horario VARCHAR(7),
     fecha VARCHAR(15),
-    sala_fk_id INT,
+    sala VARCHAR(45),
     localidad VARCHAR(66),
     precio int,
     
-    PRIMARY KEY(id),
-    FOREIGN KEY (pelicula_fk_id) REFERENCES pelicula(id)
+    PRIMARY KEY(id) 
 );
 
 CREATE TABLE tipo_venta(

@@ -7,9 +7,9 @@ import java.util.List;
 import model.Conexion;
 import pelicula.ProyeccionSalaPelicula;
 
-public class DAO_ProyeccionSalaPelicula extends Conexion implements DAO<ProyeccionSalaPelicula> {
+public class DAO_Proyeccion extends Conexion implements DAO<ProyeccionSalaPelicula> {
 
-    public DAO_ProyeccionSalaPelicula(String bd) throws ClassNotFoundException, SQLException {
+    public DAO_Proyeccion(String bd) throws ClassNotFoundException, SQLException {
         super("bdcinema");
     }
 
